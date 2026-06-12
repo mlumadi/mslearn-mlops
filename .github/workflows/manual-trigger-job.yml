@@ -21,5 +21,9 @@ jobs:
 
       - name: Run Azure Machine Learning training job
         run: |
-          az configure --defaults group=${{ secrets.AZURE_RESOURCE_GROUP }} workspace=${{ secrets.AZURE_WORKSPACE_NAME }}
-          az ml job create -f src/job.yml --stream --debug
+          az ml job create \
+            -f src/job.yml \
+            --stream \
+            --resource-group "${{ vars.AZURE_RESOURCE_GROUP }}" \
+            --workspace-name "${{ vars.AZURE_WORKSPACE_NAME }}" \
+            --debug
