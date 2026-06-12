@@ -15,4 +15,3 @@ compute: azureml:aml-cluster
 experiment_name: diabetes-training
 display_name: diabetes-train-command
 description: diabetes training job
-``
