@@ -1,5 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-code: ./src
+type: command
+code: .
 command: >-
   python train-model-parameters.py
   --training_data ${{inputs.training_data}}
@@ -14,3 +15,4 @@ compute: azureml:aml-cluster
 experiment_name: diabetes-training
 display_name: diabetes-train-command
 description: diabetes training job
+``
